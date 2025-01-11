@@ -1,0 +1,31 @@
+Q2.
+
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println(maxOccurringChar("Hello World"));
+    }
+
+    public static char maxOccurringChar(String str) {
+        if (str == null || str.isEmpty()) {
+            throw new RuntimeException("Input string is empty");
+        }
+
+        Map<Character, Integer> charCountMap = new HashMap<>();
+        char maxOccurringChar = str.charAt(0);
+        int maxCount = 1;
+
+        for (char c : str.toCharArray()) {
+            charCountMap.put(c, charCountMap.getOrDefault(c, 0) + 1);
+            if (charCountMap.get(c) > maxCount) {
+                maxCount = charCountMap.get(c);
+                maxOccurringChar = c;
+            }
+        }
+
+        return maxOccurringChar;
+    }
+}

@@ -1,0 +1,31 @@
+
+
+q1.
+
+   SELECT e.employee_name, m.manager_name
+FROM employees e
+JOIN employees m ON e.manager_id = m.employee_id
+WHERE e.manager_id IS NOT NULL;
+
+
+q2.
+
+SELECT e.*
+FROM employees e
+JOIN employees m ON e.manager_id = m.employee_id
+WHERE e.city = m.city;
+
+
+q3.
+
+SELECT DISTINCT m.employee_id, m.employee_name
+FROM employees e
+JOIN employees m ON e.manager_id = m.employee_id;
+
+
+q4.
+
+SELECT e.employee_name
+FROM employees e
+JOIN employees m ON e.manager_id = m.employee_id
+WHERE e.city = m.city;
